@@ -1,0 +1,25 @@
+.main-window{
+    border: black solid 2px;
+    border-radius: 3%;
+    color: white;
+    background-color: cadetblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+}
+
+input{
+    margin: 10px;
+}
+
+.home-btn{
+    border: 0;
+    border-radius: 5%;
+    padding: 4px;
+    margin: 5px;
+    background-color: #198754;
+    color: white;
+}
