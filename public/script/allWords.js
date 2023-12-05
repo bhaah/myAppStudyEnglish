@@ -20,6 +20,7 @@ function showList(){
         div.style.position='relative';
         div.style.backgroundColor='white';
         div.style.justifyContent = 'space-between';
+        div.onclick = ()=>showMeaning(w.Id);
         div.innerHTML=getWord(w);
         getE('words_list_id').appendChild(div);    
     })
