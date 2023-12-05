@@ -30,8 +30,18 @@ function getWord(word){
    
         <p style="margin: 15px;color: red;font-size: x-large;">${word.word} </p>
         <div style="">
-            <p style="margin: 15px;color: red;font-size: x-large;">${word.Meaning}</p>
-            <p style="margin: 15px;color: red;font-size: x-large;">${word.Sentence}</p>
+            <p style="margin: 15px;color: transparent;font-size: x-large;" id="${word.Id}_meaning_id_all_words_page">${word.Meaning}</p>
+            <p style="margin: 15px;color: transparent;font-size: x-large;" id="${word.Id}_sentence_id_all_words_page">${word.Sentence}</p>
         </div>
     `
 }
+
+function showMeaning(id){
+    let restId = '_id_all_words_page';
+    let sId = id+'_sentence'+restId;
+    let mId = id + '_meaning'+restId;
+    let colorToUpdate = getE(sId).style.color==='red'?'transparent':'red';
+    getE(mId).style.color=colorToUpdate;
+    getE(sId).style.color = colorToUpdate;
+}
+
