@@ -6,9 +6,38 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script>window.onload=loadRandomWords</script>
 <div style="width: 100%;height: 65px;background-color: black;display: flex;justify-content: space-between;">
-    <button style="font-size: xx-large;background-color: transparent;color: white;border: 0;" onclick="backToHome()">back</button>
-    <button style="font-size: xx-large;background-color: transparent;color: white;border: 0;" onclick="loadRandomWords()">new list</button>
+    <button style="font-size: xx-large;background-color: transparent;color: white;border: 0;" onclick="backToHome()">Back</button>
+    <button style="font-size: xx-large;background-color: transparent;color: white;border: 0;" onclick="openEditor()">Dates</button>
+    <button style="font-size: xx-large;background-color: transparent;color: white;border: 0;" onclick="loadRandomWords()">New list</button>
 </div>
 <div id="random_words_list_id" style="overflow-y:scroll;height: 85vh;">
 
+</div>
+<div id="dates_editor_id" style="background-color: antiquewhite;z-index: 2;position: absolute;color: white;flex-direction: column;border-radius: 20%;
+background-color: cadetblue;
+display: none;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+padding: 20px;
+width: max-content;">
+    <input type="date" onchange="disableAddDateBtn()" style="background-color: transparent;border:0;margin: 5px;" id="new_date_input">
+    <button onclick="addNewDate()" disabled="true" id="add_new_date_btn" style="border: 0;border-radius: 5%;margin: 5px;">add new date</button>
+    
+    <div id="list_of_dates_div" >
+     
+    </div>
+    <button style="border: 0;
+    border-radius: 5%;
+    padding: 4px;
+    margin: 5px;
+    background-color: #198754;
+    color: white;" onclick="loadRandomWords()">apply</button>
+    <button style="border: 0;
+    border-radius: 5%;
+    padding: 4px;
+    margin: 5px;
+    background-color: #871919;
+    color: white;" onclick="closeEditor()">close</button>
 </div>

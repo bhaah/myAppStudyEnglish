@@ -2,7 +2,8 @@ let words = [];
 
 
 async function loadRandomWords(){
-    await callAPI({'number':7},'getNumberOfWords').then(res=>{
+    closeEditor();
+    await callAPIWithDates({'number':7},'getNumberOfWords').then(res=>{
         getE('random_words_list_id').innerHTML='';
         words = res;
     })

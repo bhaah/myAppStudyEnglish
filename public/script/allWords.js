@@ -2,7 +2,8 @@ let allWords = [] ;
 
 
 async function allWordsLoad(){
-    await callAPI({},'getAllWords').then(res=>{
+    closeEditor();
+    await callAPIWithDates({},'getAllWords').then(res=>{
         allWords=res;
     });
     showList();
@@ -10,7 +11,7 @@ async function allWordsLoad(){
 
 
 function showList(){
-    
+    getE('words_list_id').innerHTML='';
     allWords.forEach(w=>{
         const div = document.createElement('div');
         div.style.display ='flex';

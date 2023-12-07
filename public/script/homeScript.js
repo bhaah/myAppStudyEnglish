@@ -22,6 +22,13 @@ function addWord(){
     
 }
 
+function loadFirstPage(){
+    console.log('onload')
+    getDates().forEach(date=>{
+        addDateToHTML(date);
+    })
+}
+
 function openAllWords(){
     window.location.assign('./allWords');
 
@@ -30,3 +37,6 @@ function openAllWords(){
 function openRandomWords(){
     window.location.assign('./randomWords');
 }
+
+
+
