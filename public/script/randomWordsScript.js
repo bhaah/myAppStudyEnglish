@@ -50,9 +50,21 @@ function getCard(word){
 function showWord(id){
     let mid = id+'_meaning';
     let sid = id + '_sentence';
-    let color = (getE(mid).style.color==='transparent')?'red':'transparent';
-    getE(mid).style.color=color;
-    getE(sid).style.color= color;
+    let meaningCurrColor = getE(mid).style.color;
+    let sentenceCurrMeaning = getE(sid).style.color;
+    if(meaningCurrColor==='transparent' && sentenceCurrMeaning==='transparent') {
+        sentenceCurrMeaning='red';
+    }
+    else if(meaningCurrColor==='transparent') {
+        meaningCurrColor = 'red';
+    }
+    else{
+        sentenceCurrMeaning='transparent';
+        meaningCurrColor='transparent';
+    }
+    
+    getE(mid).style.color=meaningCurrColor;
+    getE(sid).style.color= sentenceCurrMeaning ;
 }
 
 async function wordDone(id){

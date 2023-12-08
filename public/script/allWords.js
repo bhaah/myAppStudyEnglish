@@ -40,10 +40,22 @@ function getWord(word){
 
 function showMeaning(id){
     let restId = '_id_all_words_page';
-    let sId = id+'_sentence'+restId;
-    let mId = id + '_meaning'+restId;
-    let colorToUpdate = getE(sId).style.color==='red'?'transparent':'red';
-    getE(mId).style.color=colorToUpdate;
-    getE(sId).style.color = colorToUpdate;
+    let sid = id+'_sentence'+restId;
+    let mid = id + '_meaning'+restId;
+    let meaningCurrColor = getE(mid).style.color;
+    let sentenceCurrMeaning = getE(sid).style.color;
+    if(meaningCurrColor==='transparent' && sentenceCurrMeaning==='transparent') {
+        sentenceCurrMeaning='red';
+    }
+    else if(meaningCurrColor==='transparent') {
+        meaningCurrColor = 'red';
+    }
+    else{
+        sentenceCurrMeaning='transparent';
+        meaningCurrColor='transparent';
+    }
+    
+    getE(mid).style.color=meaningCurrColor;
+    getE(sid).style.color= sentenceCurrMeaning ;
 }
 
