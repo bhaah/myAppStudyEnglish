@@ -27,11 +27,12 @@ app.use(session({
     
 }));
 
-setTimeout(refreshConnection,10000);
+setTimeout(refreshConnection,Math.floor(Math.random() * 10000));
 async function refreshConnection(){
   await fetch('https://backend-study-english.onrender.com/api/App/refreshConnection',{method:'POST'}).catch(error=>console.log(error));
   console.log('connection was refreshed by client side!!!');
-  setTimeout(refreshConnection,30000);
+  setTimeout(refreshConnection,Math.floor(Math.random() * 30000));
+ // await fetch('https://mytodolistapp-fve8.onrender.com/').catch(console.log(error));
 }
 
 app.use('/', require('./routs/home'));

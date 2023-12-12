@@ -30,7 +30,7 @@ function getCard(word){
     return `
     <div style="border: 2px solid black;color: red;padding: 10px;display: flex;justify-content: space-between;background-color:aqua ;" onclick="showWord(${word.Id})">
         <div>
-            <h3>${word.word}</h3>
+            <h3>${generateWord(word.word)}</h3>
             <h4 id="${word.Id}_meaning" style="color:transparent">${word.Meaning}</h4>
             <h5 id="${word.Id}_sentence" style="color:transparent">${word.Sentence}</h5>
         </div>
@@ -82,4 +82,25 @@ function remove(id){
         if(word.Id != id) return word;
     });
     if(words.length===0) loadRandomWords();
+}
+
+
+
+function generateWord(word){
+    
+    for(let index = 0; index<word.length ; index++){
+        if(Math.random()<0.4){
+            word=replaceChar(word,index);
+        }
+    }
+    return word;
+}
+
+function replaceChar(originalString,index){
+    let char = originalString[index];
+    console.log(typeof char);
+    char =char.toUpperCase();
+    originalString = originalString.substring(0,index)+char+originalString.substring(index+1);
+    return originalString;
+    
 }

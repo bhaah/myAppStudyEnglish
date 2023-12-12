@@ -59,3 +59,21 @@ function showMeaning(id){
     getE(sid).style.color= sentenceCurrMeaning ;
 }
 
+function generateWord(word){
+    
+    for(let index = 0; index<word.length ; x++){
+        if(Math.random()<0.4){
+            word=replaceChar(word,index);
+        }
+    }
+    return word;
+}
+
+function replaceChar(originalString,index){
+    let char = originalString[index];
+    console.log(typeof char);
+    char =char.toUpperCase();
+    originalString = originalString.substring(0,index)+char+originalString.substring(index+1);
+    return originalString;
+    
+}
