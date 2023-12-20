@@ -9,9 +9,16 @@ async function allWordsLoad(){
     showList();
 }
 
-
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      // Swap array[i] and array[j]
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 function showList(){
     getE('words_list_id').innerHTML='';
+    shuffleArray(allWords);
     allWords.forEach(w=>{
         const div = document.createElement('div');
         div.style.display ='flex';
